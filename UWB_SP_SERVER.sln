@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWB_SP_SERVER", "UWB_SP_SERVER\UWB_SP_SERVER.csproj", "{98C27986-51ED-4031-BD23-132DEBE639B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinHtmlEditor", "WinHtmlEditor\WinHtmlEditor.csproj", "{1D1EF0A4-1D49-4D42-9295-E3B28359389A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_VS2010|Any CPU = Debug_VS2010|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release_VS2010|Any CPU = Release_VS2010|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Debug_VS2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Debug_VS2010|Any CPU.Build.0 = Debug|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Release_VS2010|Any CPU.ActiveCfg = Release|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Release_VS2010|Any CPU.Build.0 = Release|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C27986-51ED-4031-BD23-132DEBE639B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Debug_VS2010|Any CPU.ActiveCfg = Debug_VS2010|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Debug_VS2010|Any CPU.Build.0 = Debug_VS2010|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Release_VS2010|Any CPU.ActiveCfg = Release_VS2010|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Release_VS2010|Any CPU.Build.0 = Release_VS2010|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1EF0A4-1D49-4D42-9295-E3B28359389A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7DBE563-DA95-413F-8704-5E109543DE5B}
+	EndGlobalSection
+EndGlobal
