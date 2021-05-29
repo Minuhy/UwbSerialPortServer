@@ -30,22 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gbSP = new System.Windows.Forms.GroupBox();
-            this.pnlSPSetting = new System.Windows.Forms.Panel();
-            this.cbStopBit = new System.Windows.Forms.ComboBox();
-            this.cbCheckoutBit = new System.Windows.Forms.ComboBox();
-            this.lbStopBit = new System.Windows.Forms.Label();
             this.tbReceviceCount = new System.Windows.Forms.TextBox();
+            this.cbStopBit = new System.Windows.Forms.ComboBox();
             this.tbSendCount = new System.Windows.Forms.TextBox();
+            this.lbStopBit = new System.Windows.Forms.Label();
             this.lbReceiveCount = new System.Windows.Forms.Label();
+            this.cbSP = new System.Windows.Forms.ComboBox();
             this.btnResetCount = new System.Windows.Forms.Button();
+            this.cbCheckoutBit = new System.Windows.Forms.ComboBox();
             this.lbSPSta = new System.Windows.Forms.Label();
             this.lbSendCount = new System.Windows.Forms.Label();
+            this.lbSP = new System.Windows.Forms.Label();
             this.btnOpenSP = new System.Windows.Forms.Button();
             this.lbCheckoutBit = new System.Windows.Forms.Label();
-            this.cbBaud = new System.Windows.Forms.ComboBox();
             this.lbBaud = new System.Windows.Forms.Label();
-            this.lbSP = new System.Windows.Forms.Label();
-            this.cbSP = new System.Windows.Forms.ComboBox();
+            this.cbBaud = new System.Windows.Forms.ComboBox();
             this.gbSerialPortShow = new System.Windows.Forms.GroupBox();
             this.cbSPShow = new System.Windows.Forms.CheckBox();
             this.cbChangeLine = new System.Windows.Forms.CheckBox();
@@ -56,11 +55,13 @@
             this.tbSerialPortSend = new System.Windows.Forms.TextBox();
             this.rtbSerialPortShow = new System.Windows.Forms.RichTextBox();
             this.gbServerState = new System.Windows.Forms.GroupBox();
-            this.cbViData = new System.Windows.Forms.CheckBox();
+            this.lbHelp = new System.Windows.Forms.Label();
             this.btnTestWindow = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbServerPort = new System.Windows.Forms.TextBox();
             this.btnOpenServer = new System.Windows.Forms.Button();
+            this.btnEditPublic = new System.Windows.Forms.Button();
+            this.cbViData = new System.Windows.Forms.CheckBox();
             this.tbBasex1 = new System.Windows.Forms.TextBox();
             this.gbBaseSet = new System.Windows.Forms.GroupBox();
             this.btnBaseChange = new System.Windows.Forms.Button();
@@ -87,77 +88,44 @@
             this.tbBasey1 = new System.Windows.Forms.TextBox();
             this.lbBasex1 = new System.Windows.Forms.Label();
             this.lbBases1 = new System.Windows.Forms.Label();
-            this.btnEditPublic = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDataBase = new System.Windows.Forms.Button();
+            this.btnMap = new System.Windows.Forms.Button();
+            this.cbSaveData = new System.Windows.Forms.CheckBox();
             this.gbSP.SuspendLayout();
-            this.pnlSPSetting.SuspendLayout();
             this.gbSerialPortShow.SuspendLayout();
             this.gbServerState.SuspendLayout();
             this.gbBaseSet.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSP
             // 
-            this.gbSP.Controls.Add(this.pnlSPSetting);
+            this.gbSP.Controls.Add(this.tbReceviceCount);
+            this.gbSP.Controls.Add(this.cbStopBit);
+            this.gbSP.Controls.Add(this.tbSendCount);
+            this.gbSP.Controls.Add(this.lbStopBit);
+            this.gbSP.Controls.Add(this.lbReceiveCount);
+            this.gbSP.Controls.Add(this.cbSP);
+            this.gbSP.Controls.Add(this.btnResetCount);
+            this.gbSP.Controls.Add(this.cbCheckoutBit);
+            this.gbSP.Controls.Add(this.lbSPSta);
+            this.gbSP.Controls.Add(this.lbSendCount);
+            this.gbSP.Controls.Add(this.lbSP);
+            this.gbSP.Controls.Add(this.btnOpenSP);
+            this.gbSP.Controls.Add(this.lbCheckoutBit);
+            this.gbSP.Controls.Add(this.lbBaud);
+            this.gbSP.Controls.Add(this.cbBaud);
             this.gbSP.Location = new System.Drawing.Point(12, 12);
             this.gbSP.Name = "gbSP";
-            this.gbSP.Size = new System.Drawing.Size(260, 141);
+            this.gbSP.Size = new System.Drawing.Size(245, 132);
             this.gbSP.TabIndex = 1;
             this.gbSP.TabStop = false;
             this.gbSP.Text = "串口设置";
             // 
-            // pnlSPSetting
-            // 
-            this.pnlSPSetting.Controls.Add(this.cbStopBit);
-            this.pnlSPSetting.Controls.Add(this.cbCheckoutBit);
-            this.pnlSPSetting.Controls.Add(this.lbStopBit);
-            this.pnlSPSetting.Controls.Add(this.tbReceviceCount);
-            this.pnlSPSetting.Controls.Add(this.tbSendCount);
-            this.pnlSPSetting.Controls.Add(this.lbReceiveCount);
-            this.pnlSPSetting.Controls.Add(this.btnResetCount);
-            this.pnlSPSetting.Controls.Add(this.lbSPSta);
-            this.pnlSPSetting.Controls.Add(this.lbSendCount);
-            this.pnlSPSetting.Controls.Add(this.btnOpenSP);
-            this.pnlSPSetting.Controls.Add(this.lbCheckoutBit);
-            this.pnlSPSetting.Controls.Add(this.cbBaud);
-            this.pnlSPSetting.Controls.Add(this.lbBaud);
-            this.pnlSPSetting.Controls.Add(this.lbSP);
-            this.pnlSPSetting.Controls.Add(this.cbSP);
-            this.pnlSPSetting.Location = new System.Drawing.Point(6, 15);
-            this.pnlSPSetting.Name = "pnlSPSetting";
-            this.pnlSPSetting.Size = new System.Drawing.Size(248, 119);
-            this.pnlSPSetting.TabIndex = 2;
-            // 
-            // cbStopBit
-            // 
-            this.cbStopBit.DisplayMember = "0";
-            this.cbStopBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStopBit.FormattingEnabled = true;
-            this.cbStopBit.Location = new System.Drawing.Point(180, 36);
-            this.cbStopBit.Name = "cbStopBit";
-            this.cbStopBit.Size = new System.Drawing.Size(60, 20);
-            this.cbStopBit.TabIndex = 4;
-            // 
-            // cbCheckoutBit
-            // 
-            this.cbCheckoutBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCheckoutBit.FormattingEnabled = true;
-            this.cbCheckoutBit.Location = new System.Drawing.Point(180, 10);
-            this.cbCheckoutBit.Name = "cbCheckoutBit";
-            this.cbCheckoutBit.Size = new System.Drawing.Size(60, 20);
-            this.cbCheckoutBit.TabIndex = 3;
-            // 
-            // lbStopBit
-            // 
-            this.lbStopBit.AutoSize = true;
-            this.lbStopBit.Location = new System.Drawing.Point(134, 39);
-            this.lbStopBit.Name = "lbStopBit";
-            this.lbStopBit.Size = new System.Drawing.Size(41, 12);
-            this.lbStopBit.TabIndex = 13;
-            this.lbStopBit.Text = "停止位";
-            // 
             // tbReceviceCount
             // 
-            this.tbReceviceCount.Location = new System.Drawing.Point(190, 91);
+            this.tbReceviceCount.Location = new System.Drawing.Point(188, 101);
             this.tbReceviceCount.Name = "tbReceviceCount";
             this.tbReceviceCount.ReadOnly = true;
             this.tbReceviceCount.Size = new System.Drawing.Size(50, 21);
@@ -165,9 +133,19 @@
             this.tbReceviceCount.TabStop = false;
             this.tbReceviceCount.Text = "0";
             // 
+            // cbStopBit
+            // 
+            this.cbStopBit.DisplayMember = "0";
+            this.cbStopBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStopBit.FormattingEnabled = true;
+            this.cbStopBit.Location = new System.Drawing.Point(178, 46);
+            this.cbStopBit.Name = "cbStopBit";
+            this.cbStopBit.Size = new System.Drawing.Size(60, 20);
+            this.cbStopBit.TabIndex = 4;
+            // 
             // tbSendCount
             // 
-            this.tbSendCount.Location = new System.Drawing.Point(8, 91);
+            this.tbSendCount.Location = new System.Drawing.Point(6, 101);
             this.tbSendCount.Name = "tbSendCount";
             this.tbSendCount.ReadOnly = true;
             this.tbSendCount.Size = new System.Drawing.Size(50, 21);
@@ -177,28 +155,55 @@
             this.tbSendCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbSendCount.WordWrap = false;
             // 
+            // lbStopBit
+            // 
+            this.lbStopBit.AutoSize = true;
+            this.lbStopBit.Location = new System.Drawing.Point(131, 49);
+            this.lbStopBit.Name = "lbStopBit";
+            this.lbStopBit.Size = new System.Drawing.Size(41, 12);
+            this.lbStopBit.TabIndex = 13;
+            this.lbStopBit.Text = "停止位";
+            // 
             // lbReceiveCount
             // 
             this.lbReceiveCount.AutoSize = true;
-            this.lbReceiveCount.Location = new System.Drawing.Point(155, 94);
+            this.lbReceiveCount.Location = new System.Drawing.Point(156, 104);
             this.lbReceiveCount.Name = "lbReceiveCount";
             this.lbReceiveCount.Size = new System.Drawing.Size(29, 12);
             this.lbReceiveCount.TabIndex = 8;
             this.lbReceiveCount.Text = "接收";
             // 
+            // cbSP
+            // 
+            this.cbSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSP.FormattingEnabled = true;
+            this.cbSP.Location = new System.Drawing.Point(51, 20);
+            this.cbSP.Name = "cbSP";
+            this.cbSP.Size = new System.Drawing.Size(60, 20);
+            this.cbSP.TabIndex = 1;
+            // 
             // btnResetCount
             // 
-            this.btnResetCount.Location = new System.Drawing.Point(99, 89);
+            this.btnResetCount.Location = new System.Drawing.Point(100, 99);
             this.btnResetCount.Name = "btnResetCount";
             this.btnResetCount.Size = new System.Drawing.Size(50, 23);
             this.btnResetCount.TabIndex = 10;
             this.btnResetCount.Text = "清零";
             this.btnResetCount.UseVisualStyleBackColor = true;
             // 
+            // cbCheckoutBit
+            // 
+            this.cbCheckoutBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCheckoutBit.FormattingEnabled = true;
+            this.cbCheckoutBit.Location = new System.Drawing.Point(178, 20);
+            this.cbCheckoutBit.Name = "cbCheckoutBit";
+            this.cbCheckoutBit.Size = new System.Drawing.Size(60, 20);
+            this.cbCheckoutBit.TabIndex = 3;
+            // 
             // lbSPSta
             // 
             this.lbSPSta.AutoSize = true;
-            this.lbSPSta.Location = new System.Drawing.Point(6, 67);
+            this.lbSPSta.Location = new System.Drawing.Point(18, 77);
             this.lbSPSta.Name = "lbSPSta";
             this.lbSPSta.Size = new System.Drawing.Size(65, 12);
             this.lbSPSta.TabIndex = 11;
@@ -207,15 +212,24 @@
             // lbSendCount
             // 
             this.lbSendCount.AutoSize = true;
-            this.lbSendCount.Location = new System.Drawing.Point(64, 94);
+            this.lbSendCount.Location = new System.Drawing.Point(65, 104);
             this.lbSendCount.Name = "lbSendCount";
             this.lbSendCount.Size = new System.Drawing.Size(29, 12);
             this.lbSendCount.TabIndex = 6;
             this.lbSendCount.Text = "发送";
             // 
+            // lbSP
+            // 
+            this.lbSP.AutoSize = true;
+            this.lbSP.Location = new System.Drawing.Point(18, 23);
+            this.lbSP.Name = "lbSP";
+            this.lbSP.Size = new System.Drawing.Size(29, 12);
+            this.lbSP.TabIndex = 0;
+            this.lbSP.Text = "串口";
+            // 
             // btnOpenSP
             // 
-            this.btnOpenSP.Location = new System.Drawing.Point(170, 62);
+            this.btnOpenSP.Location = new System.Drawing.Point(168, 72);
             this.btnOpenSP.Name = "btnOpenSP";
             this.btnOpenSP.Size = new System.Drawing.Size(70, 23);
             this.btnOpenSP.TabIndex = 5;
@@ -225,11 +239,20 @@
             // lbCheckoutBit
             // 
             this.lbCheckoutBit.AutoSize = true;
-            this.lbCheckoutBit.Location = new System.Drawing.Point(133, 13);
+            this.lbCheckoutBit.Location = new System.Drawing.Point(131, 23);
             this.lbCheckoutBit.Name = "lbCheckoutBit";
             this.lbCheckoutBit.Size = new System.Drawing.Size(41, 12);
             this.lbCheckoutBit.TabIndex = 12;
             this.lbCheckoutBit.Text = "校验位";
+            // 
+            // lbBaud
+            // 
+            this.lbBaud.AutoSize = true;
+            this.lbBaud.Location = new System.Drawing.Point(6, 49);
+            this.lbBaud.Name = "lbBaud";
+            this.lbBaud.Size = new System.Drawing.Size(41, 12);
+            this.lbBaud.TabIndex = 2;
+            this.lbBaud.Text = "波特率";
             // 
             // cbBaud
             // 
@@ -248,38 +271,11 @@
             "115200",
             "230400",
             "460800"});
-            this.cbBaud.Location = new System.Drawing.Point(53, 36);
+            this.cbBaud.Location = new System.Drawing.Point(51, 46);
             this.cbBaud.Name = "cbBaud";
             this.cbBaud.Size = new System.Drawing.Size(60, 20);
             this.cbBaud.TabIndex = 2;
             this.cbBaud.Text = "115200";
-            // 
-            // lbBaud
-            // 
-            this.lbBaud.AutoSize = true;
-            this.lbBaud.Location = new System.Drawing.Point(6, 39);
-            this.lbBaud.Name = "lbBaud";
-            this.lbBaud.Size = new System.Drawing.Size(41, 12);
-            this.lbBaud.TabIndex = 2;
-            this.lbBaud.Text = "波特率";
-            // 
-            // lbSP
-            // 
-            this.lbSP.AutoSize = true;
-            this.lbSP.Location = new System.Drawing.Point(18, 13);
-            this.lbSP.Name = "lbSP";
-            this.lbSP.Size = new System.Drawing.Size(29, 12);
-            this.lbSP.TabIndex = 0;
-            this.lbSP.Text = "串口";
-            // 
-            // cbSP
-            // 
-            this.cbSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSP.FormattingEnabled = true;
-            this.cbSP.Location = new System.Drawing.Point(53, 10);
-            this.cbSP.Name = "cbSP";
-            this.cbSP.Size = new System.Drawing.Size(60, 20);
-            this.cbSP.TabIndex = 1;
             // 
             // gbSerialPortShow
             // 
@@ -291,9 +287,9 @@
             this.gbSerialPortShow.Controls.Add(this.btnSPSend);
             this.gbSerialPortShow.Controls.Add(this.tbSerialPortSend);
             this.gbSerialPortShow.Controls.Add(this.rtbSerialPortShow);
-            this.gbSerialPortShow.Location = new System.Drawing.Point(278, 12);
+            this.gbSerialPortShow.Location = new System.Drawing.Point(263, 12);
             this.gbSerialPortShow.Name = "gbSerialPortShow";
-            this.gbSerialPortShow.Size = new System.Drawing.Size(259, 141);
+            this.gbSerialPortShow.Size = new System.Drawing.Size(259, 185);
             this.gbSerialPortShow.TabIndex = 7;
             this.gbSerialPortShow.TabStop = false;
             this.gbSerialPortShow.Text = "串口监控";
@@ -302,7 +298,7 @@
             // 
             this.cbSPShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSPShow.AutoSize = true;
-            this.cbSPShow.Location = new System.Drawing.Point(204, 21);
+            this.cbSPShow.Location = new System.Drawing.Point(204, 20);
             this.cbSPShow.Name = "cbSPShow";
             this.cbSPShow.Size = new System.Drawing.Size(48, 16);
             this.cbSPShow.TabIndex = 11;
@@ -311,10 +307,9 @@
             // 
             // cbChangeLine
             // 
-            this.cbChangeLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbChangeLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbChangeLine.AutoSize = true;
-            this.cbChangeLine.Location = new System.Drawing.Point(144, 116);
+            this.cbChangeLine.Location = new System.Drawing.Point(144, 160);
             this.cbChangeLine.Name = "cbChangeLine";
             this.cbChangeLine.Size = new System.Drawing.Size(48, 16);
             this.cbChangeLine.TabIndex = 0;
@@ -355,7 +350,7 @@
             // btnSPSend
             // 
             this.btnSPSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSPSend.Location = new System.Drawing.Point(197, 112);
+            this.btnSPSend.Location = new System.Drawing.Point(197, 156);
             this.btnSPSend.Name = "btnSPSend";
             this.btnSPSend.Size = new System.Drawing.Size(55, 23);
             this.btnSPSend.TabIndex = 2;
@@ -366,7 +361,7 @@
             // 
             this.tbSerialPortSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSerialPortSend.Location = new System.Drawing.Point(6, 114);
+            this.tbSerialPortSend.Location = new System.Drawing.Point(6, 158);
             this.tbSerialPortSend.Name = "tbSerialPortSend";
             this.tbSerialPortSend.Size = new System.Drawing.Size(132, 21);
             this.tbSerialPortSend.TabIndex = 9;
@@ -380,7 +375,7 @@
             this.rtbSerialPortShow.Location = new System.Drawing.Point(6, 42);
             this.rtbSerialPortShow.Name = "rtbSerialPortShow";
             this.rtbSerialPortShow.ReadOnly = true;
-            this.rtbSerialPortShow.Size = new System.Drawing.Size(246, 66);
+            this.rtbSerialPortShow.Size = new System.Drawing.Size(246, 110);
             this.rtbSerialPortShow.TabIndex = 0;
             this.rtbSerialPortShow.TabStop = false;
             this.rtbSerialPortShow.Text = "";
@@ -388,65 +383,87 @@
             // 
             // gbServerState
             // 
-            this.gbServerState.Controls.Add(this.btnEditPublic);
-            this.gbServerState.Controls.Add(this.cbViData);
+            this.gbServerState.Controls.Add(this.lbHelp);
             this.gbServerState.Controls.Add(this.btnTestWindow);
             this.gbServerState.Controls.Add(this.label1);
             this.gbServerState.Controls.Add(this.tbServerPort);
             this.gbServerState.Controls.Add(this.btnOpenServer);
-            this.gbServerState.Location = new System.Drawing.Point(13, 160);
+            this.gbServerState.Location = new System.Drawing.Point(13, 150);
             this.gbServerState.Name = "gbServerState";
-            this.gbServerState.Size = new System.Drawing.Size(517, 47);
+            this.gbServerState.Size = new System.Drawing.Size(244, 47);
             this.gbServerState.TabIndex = 8;
             this.gbServerState.TabStop = false;
-            this.gbServerState.Text = "服务器状态";
+            this.gbServerState.Text = "服务器设置";
             // 
-            // cbViData
+            // lbHelp
             // 
-            this.cbViData.AutoSize = true;
-            this.cbViData.Location = new System.Drawing.Point(278, 22);
-            this.cbViData.Name = "cbViData";
-            this.cbViData.Size = new System.Drawing.Size(132, 16);
-            this.cbViData.TabIndex = 5;
-            this.cbViData.Text = "使用虚拟数据以测试";
-            this.cbViData.UseVisualStyleBackColor = true;
+            this.lbHelp.AutoSize = true;
+            this.lbHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbHelp.ForeColor = System.Drawing.Color.Blue;
+            this.lbHelp.Location = new System.Drawing.Point(165, 23);
+            this.lbHelp.Name = "lbHelp";
+            this.lbHelp.Size = new System.Drawing.Size(29, 12);
+            this.lbHelp.TabIndex = 5;
+            this.lbHelp.Text = "帮助";
+            this.lbHelp.Click += new System.EventHandler(this.lbHelp_Click);
             // 
             // btnTestWindow
             // 
-            this.btnTestWindow.Location = new System.Drawing.Point(411, 18);
+            this.btnTestWindow.Location = new System.Drawing.Point(197, 18);
             this.btnTestWindow.Name = "btnTestWindow";
-            this.btnTestWindow.Size = new System.Drawing.Size(100, 23);
+            this.btnTestWindow.Size = new System.Drawing.Size(41, 23);
             this.btnTestWindow.TabIndex = 4;
-            this.btnTestWindow.Text = "服务器测试程序";
+            this.btnTestWindow.Text = "测试";
             this.btnTestWindow.UseVisualStyleBackColor = true;
             this.btnTestWindow.Click += new System.EventHandler(this.btnTestWindow_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 2;
-            this.label1.Text = "监听端口";
+            this.label1.Text = "端口";
             // 
             // tbServerPort
             // 
-            this.tbServerPort.Location = new System.Drawing.Point(65, 20);
+            this.tbServerPort.Location = new System.Drawing.Point(41, 20);
             this.tbServerPort.Name = "tbServerPort";
-            this.tbServerPort.Size = new System.Drawing.Size(45, 21);
+            this.tbServerPort.Size = new System.Drawing.Size(40, 21);
             this.tbServerPort.TabIndex = 1;
             this.tbServerPort.Text = "17667";
             // 
             // btnOpenServer
             // 
-            this.btnOpenServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenServer.Location = new System.Drawing.Point(116, 18);
+            this.btnOpenServer.Location = new System.Drawing.Point(87, 18);
             this.btnOpenServer.Name = "btnOpenServer";
             this.btnOpenServer.Size = new System.Drawing.Size(75, 23);
             this.btnOpenServer.TabIndex = 0;
             this.btnOpenServer.Text = "开启服务器";
             this.btnOpenServer.UseVisualStyleBackColor = true;
+            // 
+            // btnEditPublic
+            // 
+            this.btnEditPublic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditPublic.Location = new System.Drawing.Point(347, 20);
+            this.btnEditPublic.Name = "btnEditPublic";
+            this.btnEditPublic.Size = new System.Drawing.Size(75, 23);
+            this.btnEditPublic.TabIndex = 6;
+            this.btnEditPublic.Text = "编辑公告";
+            this.btnEditPublic.UseVisualStyleBackColor = true;
+            this.btnEditPublic.Click += new System.EventHandler(this.btnEditPublic_Click);
+            // 
+            // cbViData
+            // 
+            this.cbViData.AutoSize = true;
+            this.cbViData.Location = new System.Drawing.Point(6, 24);
+            this.cbViData.Name = "cbViData";
+            this.cbViData.Size = new System.Drawing.Size(168, 16);
+            this.cbViData.TabIndex = 5;
+            this.cbViData.Text = "服务器使用虚拟数据以测试";
+            this.cbViData.UseVisualStyleBackColor = true;
             // 
             // tbBasex1
             // 
@@ -459,9 +476,6 @@
             // 
             // gbBaseSet
             // 
-            this.gbBaseSet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbBaseSet.Controls.Add(this.btnBaseChange);
             this.gbBaseSet.Controls.Add(this.btnBaseChange3);
             this.gbBaseSet.Controls.Add(this.btnBaseChange2);
@@ -487,16 +501,16 @@
             this.gbBaseSet.Controls.Add(this.lbBasex1);
             this.gbBaseSet.Controls.Add(this.lbBases1);
             this.gbBaseSet.Controls.Add(this.tbBasex1);
-            this.gbBaseSet.Location = new System.Drawing.Point(13, 214);
+            this.gbBaseSet.Location = new System.Drawing.Point(12, 259);
             this.gbBaseSet.Name = "gbBaseSet";
-            this.gbBaseSet.Size = new System.Drawing.Size(523, 102);
+            this.gbBaseSet.Size = new System.Drawing.Size(510, 103);
             this.gbBaseSet.TabIndex = 9;
             this.gbBaseSet.TabStop = false;
             this.gbBaseSet.Text = "基站设置";
             // 
             // btnBaseChange
             // 
-            this.btnBaseChange.Location = new System.Drawing.Point(490, 17);
+            this.btnBaseChange.Location = new System.Drawing.Point(476, 17);
             this.btnBaseChange.Name = "btnBaseChange";
             this.btnBaseChange.Size = new System.Drawing.Size(27, 77);
             this.btnBaseChange.TabIndex = 31;
@@ -507,7 +521,7 @@
             // 
             this.btnBaseChange3.Location = new System.Drawing.Point(408, 71);
             this.btnBaseChange3.Name = "btnBaseChange3";
-            this.btnBaseChange3.Size = new System.Drawing.Size(75, 23);
+            this.btnBaseChange3.Size = new System.Drawing.Size(62, 23);
             this.btnBaseChange3.TabIndex = 30;
             this.btnBaseChange3.Text = "修改";
             this.btnBaseChange3.UseVisualStyleBackColor = true;
@@ -516,7 +530,7 @@
             // 
             this.btnBaseChange2.Location = new System.Drawing.Point(408, 44);
             this.btnBaseChange2.Name = "btnBaseChange2";
-            this.btnBaseChange2.Size = new System.Drawing.Size(75, 23);
+            this.btnBaseChange2.Size = new System.Drawing.Size(62, 23);
             this.btnBaseChange2.TabIndex = 29;
             this.btnBaseChange2.Text = "修改";
             this.btnBaseChange2.UseVisualStyleBackColor = true;
@@ -525,7 +539,7 @@
             // 
             this.btnBaseChange1.Location = new System.Drawing.Point(408, 17);
             this.btnBaseChange1.Name = "btnBaseChange1";
-            this.btnBaseChange1.Size = new System.Drawing.Size(75, 23);
+            this.btnBaseChange1.Size = new System.Drawing.Size(62, 23);
             this.btnBaseChange1.TabIndex = 28;
             this.btnBaseChange1.Text = "修改";
             this.btnBaseChange1.UseVisualStyleBackColor = true;
@@ -710,41 +724,86 @@
             this.lbBases1.TabIndex = 6;
             this.lbBases1.Text = "基站1：   x:";
             // 
-            // btnEditPublic
+            // groupBox1
             // 
-            this.btnEditPublic.Location = new System.Drawing.Point(197, 18);
-            this.btnEditPublic.Name = "btnEditPublic";
-            this.btnEditPublic.Size = new System.Drawing.Size(75, 23);
-            this.btnEditPublic.TabIndex = 6;
-            this.btnEditPublic.Text = "编辑公告";
-            this.btnEditPublic.UseVisualStyleBackColor = true;
-            this.btnEditPublic.Click += new System.EventHandler(this.btnEditPublic_Click);
+            this.groupBox1.Controls.Add(this.cbSaveData);
+            this.groupBox1.Controls.Add(this.btnDataBase);
+            this.groupBox1.Controls.Add(this.btnMap);
+            this.groupBox1.Controls.Add(this.cbViData);
+            this.groupBox1.Controls.Add(this.btnEditPublic);
+            this.groupBox1.Location = new System.Drawing.Point(12, 203);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(510, 50);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "其他设置";
+            // 
+            // btnDataBase
+            // 
+            this.btnDataBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDataBase.Location = new System.Drawing.Point(266, 20);
+            this.btnDataBase.Name = "btnDataBase";
+            this.btnDataBase.Size = new System.Drawing.Size(75, 23);
+            this.btnDataBase.TabIndex = 8;
+            this.btnDataBase.Text = "数据库设置";
+            this.btnDataBase.UseVisualStyleBackColor = true;
+            this.btnDataBase.Click += new System.EventHandler(this.btnDataBase_Click);
+            // 
+            // btnMap
+            // 
+            this.btnMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMap.Location = new System.Drawing.Point(428, 20);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(75, 23);
+            this.btnMap.TabIndex = 7;
+            this.btnMap.Text = "打开地图";
+            this.btnMap.UseVisualStyleBackColor = true;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
+            // 
+            // cbSaveData
+            // 
+            this.cbSaveData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSaveData.AutoSize = true;
+            this.cbSaveData.Location = new System.Drawing.Point(188, 24);
+            this.cbSaveData.Name = "cbSaveData";
+            this.cbSaveData.Size = new System.Drawing.Size(72, 16);
+            this.cbSaveData.TabIndex = 9;
+            this.cbSaveData.Text = "保存数据";
+            this.cbSaveData.UseVisualStyleBackColor = true;
+            this.cbSaveData.CheckedChanged += new System.EventHandler(this.cbSaveData_CheckedChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 318);
+            this.ClientSize = new System.Drawing.Size(534, 370);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbBaseSet);
             this.Controls.Add(this.gbServerState);
             this.Controls.Add(this.gbSerialPortShow);
             this.Controls.Add(this.gbSP);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(564, 366);
-            this.MinimumSize = new System.Drawing.Size(295, 255);
+            this.MaximumSize = new System.Drawing.Size(550, 409);
+            this.MinimumSize = new System.Drawing.Size(275, 235);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UWB串口服务器";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.gbSP.ResumeLayout(false);
-            this.pnlSPSetting.ResumeLayout(false);
-            this.pnlSPSetting.PerformLayout();
+            this.gbSP.PerformLayout();
             this.gbSerialPortShow.ResumeLayout(false);
             this.gbSerialPortShow.PerformLayout();
             this.gbServerState.ResumeLayout(false);
             this.gbServerState.PerformLayout();
             this.gbBaseSet.ResumeLayout(false);
             this.gbBaseSet.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -752,7 +811,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbSP;
-        private System.Windows.Forms.Panel pnlSPSetting;
         private System.Windows.Forms.ComboBox cbStopBit;
         private System.Windows.Forms.ComboBox cbCheckoutBit;
         private System.Windows.Forms.Label lbStopBit;
@@ -810,6 +868,11 @@
         private System.Windows.Forms.CheckBox cbViData;
         private System.Windows.Forms.Button btnBaseChange;
         private System.Windows.Forms.Button btnEditPublic;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbHelp;
+        private System.Windows.Forms.Button btnDataBase;
+        private System.Windows.Forms.Button btnMap;
+        private System.Windows.Forms.CheckBox cbSaveData;
     }
 }
 

@@ -35,7 +35,7 @@ namespace UWB_SP_TO_SOCKET.src.Service.Server.Cmd
     {
         public override void ExecuteCommand(DataSession session, StringRequestInfo requestInfo)
         {
-            session.Send("LOGOUT:BEY");
+            session.Send("LOGIN:BEY");
 
 #if DEBUG
                 Debug.DebugLog("客户端 " + session.GetName() + " 已退出！");

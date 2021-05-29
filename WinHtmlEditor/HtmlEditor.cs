@@ -2623,14 +2623,14 @@ namespace WinHtmlEditor
         private void spellCheck_DeletedWord(object sender, NetSpell.SpellChecker.SpellingEventArgs e)
         {
             var htmlDocument = wb.Document;
-            if (htmlDocument != null) if (htmlDocument.Body != null) htmlDocument.Body.InnerHtml = e.Text;
+            if (htmlDocument != null) if (htmlDocument.Body != null) htmlDocument.Body.InnerHtml = e.Word;
         }
 
         private void spellCheck_ReplacedWord(object sender, NetSpell.SpellChecker.ReplaceWordEventArgs e)
         {
             Debug.Assert(wb.Document != null, "wb.Document != null");
             Debug.Assert(wb.Document.Body != null, "wb.Document.Body != null");
-            wb.Document.Body.InnerHtml = e.Text;
+            wb.Document.Body.InnerHtml = e.Word;
         }
 
         #region Fonts and Color Handling

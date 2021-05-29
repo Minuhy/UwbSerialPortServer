@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using UWB_SP_TO_SOCKET.form;
+using UWB_SP_TO_SOCKET.src.Model;
 using UWB_SP_TO_SOCKET.src.Service;
 using UWB_SP_TO_SOCKET.src.Tools;
 #if DEBUG
@@ -75,7 +76,7 @@ namespace UWB_SP_TO_SOCKET
         /// <summary>
         /// 串口服务
         /// </summary>
-       SerialPortService m_SerialPortService;
+        SerialPortService m_SerialPortService;
         /// <summary>
         /// TCP服务器
         /// </summary>
@@ -84,6 +85,11 @@ namespace UWB_SP_TO_SOCKET
         /// TWR服务器
         /// </summary>
         TwrServer m_TwrServer;
+
+        /// <summary>
+        /// 数据库服务器
+        /// </summary>
+        DataBaseServer m_databaseServer;
 
         public MainForm()
         {
@@ -101,13 +107,23 @@ namespace UWB_SP_TO_SOCKET
             m_SerialPortService = new SerialPortService();
             m_TwrServer = new TwrServer(m_SerialPortService);
             m_SocketServer = new SocketServer(m_TwrServer);
-          
+
             MessageServer.GetMs().SetTWRServer(m_TwrServer);
 
-            m_SerialPortService.InitView(cbSP, cbBaud, cbCheckoutBit, cbStopBit, tbSendCount, tbReceviceCount, lbSPSta, btnOpenSP, btnSPSend, rbHex, cbChangeLine, cbSPShow, tbSerialPortSend, rtbSerialPortShow, btnResetCount,rbText);
+            m_SerialPortService.InitView(cbSP, cbBaud, cbCheckoutBit, cbStopBit, tbSendCount, tbReceviceCount, lbSPSta, btnOpenSP, btnSPSend, rbHex, cbChangeLine, cbSPShow, tbSerialPortSend, rtbSerialPortShow, btnResetCount, rbText);
             m_SocketServer.InitView(btnOpenServer, tbServerPort);
             m_TwrServer.InitView(btnBaseChange1, btnBaseChange2, btnBaseChange3, btnBaseChange, tbBasex1, tbBasex2, tbBasex3, tbBasey1, tbBasey2, tbBasey3, tbBasez1, tbBasez2, tbBasez3, cbViData);
 
+
+            m_TwrServer.tagBuildEvent += M_TwrServer_tagBuildEvent;
+            m_TwrServer.anchorBuildEvent += M_TwrServer_anchorBuildEvent;
+
+
+            m_databaseServer = DataBaseServer.GetInstance();
+            m_databaseServer.Init(m_TwrServer);
+
+            this.m_databaseServer.isEnable = cbSaveData.Checked;
+            m_databaseServer.InitDataBase();
         }
 
         internal static MainForm GetMainWindow()
@@ -160,11 +176,12 @@ namespace UWB_SP_TO_SOCKET
 
         private void btnTestWindow_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("测试中", "提示");
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+
             m_SerialPortService.Close();
             m_TwrServer.Close();
             m_SocketServer.Close();
@@ -174,6 +191,7 @@ namespace UWB_SP_TO_SOCKET
             Application.Exit();
             Application.ExitThread();
             System.Environment.Exit(0);
+
         }
 
         protected override void WndProc(ref Message m)
@@ -209,6 +227,184 @@ namespace UWB_SP_TO_SOCKET
         {
             Form epForm = new EditPublic(AnnouncementRes.GetAnnouncement());
             epForm.ShowDialog();
+        }
+
+        private void lbHelp_Click(object sender, EventArgs e)
+        {
+            new HelpForm().ShowDialog();
+        }
+
+
+        public delegate void MapDataChangeHandler(MapModel mm);
+        public event MapDataChangeHandler MapDataChangeEvent;
+
+
+        /// <summary>
+        /// 地图控件
+        /// </summary>
+        MapForm mapForm;
+
+        private void M_TwrServer_tagBuildEvent(src.Twr.Table.TableTag tt)
+        {
+            //MessageBox.Show(tt.ToString());
+            MapDataChange(tt.tag_id, tt.x, tt.y, true);
+        }
+
+        private void M_TwrServer_anchorBuildEvent(src.Twr.Table.TableAnchor ta)
+        {
+            // MessageBox.Show(ta.ToString());
+            MapDataChange(ta.anchor_id, ta.x, ta.y);
+        }
+
+        /// <summary>
+        /// 地图数据产生事件调用
+        /// </summary>
+        /// <param name="id">目标ID</param>
+        /// <param name="x">x坐标</param>
+        /// <param name="y">y坐标</param>
+        /// <param name="isTag">是否是目标点</param>
+        private void MapDataChange(int id, double x, double y, bool isTag = false)
+        {
+            MapModel mapModel = new MapModel();
+            mapModel.id = id;
+            mapModel.x = x;
+            mapModel.y = y;
+            mapModel.isTag = isTag;
+            MapDataChangeEvent?.Invoke(mapModel);
+        }
+
+        private void InitMapData()
+        {
+            try
+            {
+                if (m_TwrServer != null)
+                {
+                    MapModel mapModel = new MapModel
+                    {
+                        id = 1,
+                        x = MessageServer.GetMs().GetTAnchor(1).x,
+                        y = MessageServer.GetMs().GetTAnchor(1).y
+                    };
+                    MapDataChangeEvent?.Invoke(mapModel);
+
+
+                    mapModel = new MapModel
+                    {
+                        id = 2,
+                        x = MessageServer.GetMs().GetTAnchor(2).x,
+                        y = MessageServer.GetMs().GetTAnchor(2).y
+                    };
+                    MapDataChangeEvent?.Invoke(mapModel);
+
+
+                    mapModel = new MapModel
+                    {
+                        id = 3,
+                        x = MessageServer.GetMs().GetTAnchor(3).x,
+                        y = MessageServer.GetMs().GetTAnchor(3).y
+                    };
+                    MapDataChangeEvent?.Invoke(mapModel);
+
+
+                    var tag = MessageServer.GetMs().GetTTag(5);
+                    if (tag != null)
+                    {
+                        mapModel = new MapModel
+                        {
+                            id = 1,
+                            x = tag.x,
+                            y = tag.y,
+                            isTag = true
+                        };
+                        MapDataChangeEvent?.Invoke(mapModel);
+                    }
+                }
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+            if (mapForm != null)
+            {
+                if (mapForm.IsClose)
+                {
+                    mapForm = new MapForm(this);
+                    mapForm.Show();
+                    InitMapData();
+                }
+                else
+                {
+                    MessageBox.Show("地图已打开", "提示");
+                }
+            }
+            else
+            {
+                mapForm = new MapForm(this);
+                mapForm.Show();
+                InitMapData();
+            }
+        }
+
+        private void btnDataBase_Click(object sender, EventArgs e)
+        {
+            if (this.m_databaseServer != null)
+            {
+                if (!this.m_databaseServer.isEnable)
+                {
+                    DialogResult result = MessageBox.Show("数据库未启用，确定启用？", "提示"
+            , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result != DialogResult.OK)
+                    {
+                        // 点击取消
+                        return;
+                    }
+                    else
+                    {
+                        // 点击确定
+                        this.cbSaveData.Checked = true;
+                        this.m_databaseServer.isEnable = true;
+                    }
+                }
+
+                new DataBaseForm().ShowDialog();
+            }
+
+        }
+
+        private void cbSaveData_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_databaseServer != null)
+            {
+                this.m_databaseServer.isEnable = cbSaveData.Checked;
+                if (!this.m_databaseServer.IsInit)
+                {
+                    if (!this.m_databaseServer.InitDataBase())
+                    {
+                        MessageBox.Show("初始化数据库失败！", "提示");
+                    }
+                }
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("确认退出吗？", "退出"
+                , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result != DialogResult.OK)
+            {
+                e.Cancel = true;//告诉窗体关闭这个任务取消
+            }
+            else
+            {
+                // 保存数据
+                this.m_databaseServer.isEnable = false;
+            }
+
         }
     }
 }

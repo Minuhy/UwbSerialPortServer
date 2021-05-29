@@ -236,6 +236,25 @@ namespace UWB_SP_TO_SOCKET.src.Service
             }
         }
         /// <summary>
+        /// 获取锚点信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public TableAnchor GetAnchorById(int id)
+        {
+            if (id < anchor.Length)
+            {
+                TableAnchor ta = new TableAnchor();
+
+                ta.anchor_id = id+1;
+                ta.x = anchor[id].x;
+                ta.y = anchor[id].y;
+                ta.z = anchor[id].z;
+                return ta;
+            }
+            return null;
+        }
+        /// <summary>
         /// 通过视图更新锚点信息
         /// </summary>
         /// <param name="id">锚点ID</param>

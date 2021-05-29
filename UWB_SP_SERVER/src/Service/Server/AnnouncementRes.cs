@@ -61,6 +61,10 @@ public class AnnouncementRes
         }
     }
 
+    /// <summary>
+    /// 获取保存的公告
+    /// </summary>
+    /// <returns>非标准html代码，base64编码</returns>
     public static string GetAnnouncement()
     {
         if(announcementRes == null)
@@ -73,7 +77,12 @@ public class AnnouncementRes
             announcementRes.strAnnouncement = "无";
         }
 
-        return announcementRes.strAnnouncement;
+
+        // 转二进制
+        byte[] b = Encoding.Default.GetBytes(announcementRes.strAnnouncement);
+        
+        // 返回Base64编码
+        return Convert.ToBase64String(b);
     }
 
     public static void SetAnnouncement(string str)

@@ -35,7 +35,7 @@ namespace UWB_SP_TO_SOCKET.src.Service.Server.Cmd
         {
             if (session.isLogin)
             {
-                //如果参数大于两个
+                //如果参数大于一个
                 if (requestInfo.Parameters.Length >= 1)
                 {
                     if (requestInfo.Parameters[0] == session.GetName())
