@@ -63,11 +63,8 @@ namespace UWB_SP_TO_SOCKET.src.Service
         /// <summary>
         /// 初始化服务器界面
         /// </summary>
-        /// <param name="cbIPAddress">IP地址下拉列表</param>
         /// <param name="btnOpenServer">打开服务器按钮</param>
         /// <param name="tbServerPort">服务器端口编辑框</param>
-        /// <param name="lbServerSta">服务器状态标签</param>
-        /// <param name="dgvClientManage">管理列表</param>
         internal void InitView(Button btnOpenServer, TextBox tbServerPort)
         {
             this.btnOpenServer = btnOpenServer;

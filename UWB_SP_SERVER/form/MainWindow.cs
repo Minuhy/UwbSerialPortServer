@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using UWB_SP_TO_SOCKET.form;
 using UWB_SP_TO_SOCKET.src.Model;
@@ -223,9 +224,25 @@ namespace UWB_SP_TO_SOCKET
             rtbSerialPortShow.ScrollToCaret();
         }
 
+        ///解码
+        public static string DecodeBase64(string code)
+        {
+            string decode = "";
+            byte[] bytes = Convert.FromBase64String(code);
+            try
+            {
+                decode = Encoding.Default.GetString(bytes);
+            }
+            catch
+            {
+                decode = code;
+            }
+            return decode;
+        }
+
         private void btnEditPublic_Click(object sender, EventArgs e)
         {
-            Form epForm = new EditPublic(AnnouncementRes.GetAnnouncement());
+            Form epForm = new EditPublic(DecodeBase64(AnnouncementRes.GetAnnouncement()));
             epForm.ShowDialog();
         }
 
